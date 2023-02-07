@@ -35,6 +35,7 @@ const loop = setInterval(() => {
         mario.style.marginLeft = '50px';
 
         clearInterval(loop);
+        /*aqui ele apaga o intervalo do loop*/
     }
 
 }, 10);
