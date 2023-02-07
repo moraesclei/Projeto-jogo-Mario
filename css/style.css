@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.game-board {
+  width: 90%;
+  height: 500px;
+  border-bottom: 15px solid rgb(32, 110, 32);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-image: url(img/fundo_img.jpg);
+  background-repeat: no-repeat;
+  /*background: linear-gradient(#87ceeb, #e0f6ff);*/
+}
+
+
+
+.cloudfig{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.pipe {
+  /*aqui faz com que o tubo fique passando infinitamente*/
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  animation: pipe-animation 1.9s infinite linear;
+}
+.mario {
+  width: 130px;
+  position: absolute;
+  bottom: 0;
+}
+
+.jump {
+  /*ease-out pulo instantâneo */
+  animation: jump 500ms ease-out;
+}
+
+.clouds {
+  position: absolute;
+  width: 550px;
+  height: 50%;
+  animation: clouds-animation 20s infinite linear;
+}
+@keyframes pipe-animation {
+  from {
+    right: 0;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes jump {
+  0% {
+    /*inicio da animação o bottom será 0 */
+    bottom: 0;
+  }
+
+  40% {
+    /*aqui ele vai permanecer no ar por um certo tempo*/
+    bottom: 180px;
+  }
+
+  50% {
+    /*no meio da animação o bottom será 180px */
+    bottom: 180px;
+  }
+
+  60% {
+    /*ele vai chegando ao final da animaçao */
+    bottom: 180px;
+  }
+
+  100% {
+    /*ao fim da animação o bottom voltará a 0 */
+    bottom: 0;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+    right: 0px;
+  }
+
+  to {
+    right: 50%;
+  }
+}
